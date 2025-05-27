@@ -1,13 +1,13 @@
 import mongoose from 'mongoose';
-import 'dotenv/config';
+import dotenv from 'dotenv'
+dotenv.config()
 
-const uri = `mongodb+srv://${process.env.DM_USER}:${process.env.DM_PASSWORD}@cluster0.jdzqo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
+const uri = process.env.MONGO_URI
 console.log(uri);
 
 const connectedDB = async () => {
     try {
-        await mongoose.connect(uri,{autoIndex: false});
+        await mongoose.connect(uri);
         console.log("Database connected successfully");
     } catch (err) {
         console.error("Database connection error:", err);

@@ -1,4 +1,4 @@
-import { meetReq } from "../config/db";
+import { meetReq } from "../config/db.js";
 
 const submitRequest = async (req, res, next) => {
     const { name, email, description, time, status } = req.body;

@@ -1,15 +1,15 @@
-const express = require('express');
-const validateSubmitRequest=require('../middleware/validateSubmitRequest');
-const submitRequest =require("../controller/requestController");
-const approveRequest = require("../controller/approveRequest")
-const rejectRequest = require("../controller/rejectRequest")
-const adminLogin =require("../controller/adminLogin")
-const getAllAppointments = require('../controller/getAllAppointments')
+import express from 'express';
+import validateSubmitRequest from '../middleware/validateSubmitRequest.js';
+import submitRequest from '../controller/requestController.js';
+import approveRequest from '../controller/approveRequest.js';
+import rejectRequest from '../controller/rejectRequest.js';
+import adminLogin from '../controller/adminLogin.js';
+import getAllAppointments from '../controller/getAllAppointments.js';
+
 const router = express.Router();
 
-
 // 🧾 User submits event request
-router.post("/requstSubmit/api",validateSubmitRequest,submitRequest );
+router.post("/requstSubmit/api", validateSubmitRequest, submitRequest);
 
 // 📋 Admin gets all requests
 router.post('/api/admin-login', adminLogin);
@@ -20,8 +20,7 @@ router.put('/api/approve', approveRequest);
 // ❌ Admin rejects request
 router.put('/api/reject', rejectRequest);
 
-// Get All Appointment data 
-
+// 📅 Get All Appointments
 router.get("/api/appointments", getAllAppointments);
 
-module.exports = router;
+export default router;

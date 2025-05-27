@@ -1,0 +1,27 @@
+.navbar {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1);
+}
